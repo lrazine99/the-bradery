@@ -4,7 +4,7 @@ Run npm i inside the client directory
 
 Run npm i inside the server directory
 
-Run docker-compose up --build inside the mainn project directory
+Run docker-compose up --build inside the main project directory
 
 Access the Adminer using route http://localhost:8000/.
 
