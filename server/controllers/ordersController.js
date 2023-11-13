@@ -19,9 +19,9 @@ exports.newOrder = async (req, res) => {
         source: stripeToken,
       });
 
-      const newOrder = new Order(req.user.id, date, price);
+      const newOrder = new Order(req.user.id, price);
       const [{ insertId }] = await newOrder.save();
-      
+
       cart.forEach((element) => {
         const newInventory = element.inventory - element.quantity;
         const newOrderItems = new OrderItems(

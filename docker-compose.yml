@@ -48,8 +48,8 @@ services:
   client:
     stdin_open: true
     environment:
-      BACK_ENDPOINT: /api
-      PUBLIC_STRIPE_KEY: pk_test_51Mv1BEGk0I9TXycscLqSPCp1DASuOBnqOEabJhEGK9G7eDVwz5IzGQShwkzyWubnRftF2QkksYt5lzu966DGUOrk00ULtp9mIF
+      REACT_APP_BACK_ENDPOINT: /api
+      REACT_APP_PUBLIC_STRIPE_KEY: pk_test_51Mv1BEGk0I9TXycscLqSPCp1DASuOBnqOEabJhEGK9G7eDVwz5IzGQShwkzyWubnRftF2QkksYt5lzu966DGUOrk00ULtp9mIF
       CHOKIDAR_USEPOLLING: true
     build:
       dockerfile: Dockerfile

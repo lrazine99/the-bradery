@@ -16,7 +16,7 @@ const Checkout = () => {
     "pk_test_51Mv1BEGk0I9TXycscLqSPCp1DASuOBnqOEabJhEGK9G7eDVwz5IzGQShwkzyWubnRftF2QkksYt5lzu966DGUOrk00ULtp9mIF";
   const navigate = useNavigate();
   let { pathname } = useLocation();
-  const stripePromise = loadStripe(process.env.PUBLIC_STRIPE_KEY);
+  const stripePromise = loadStripe(process.env.REACT_APP_PUBLIC_STRIPE_KEY);
   const { cartWishlist } = useContext(cartWhislistContext);
   const token = Cookies.get("token");
   const username = Cookies.get("username");

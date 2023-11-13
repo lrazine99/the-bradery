@@ -34,7 +34,7 @@ const CheckoutForm = ({ data }) => {
 
     try {
       const response = await axios.post(
-        `${process.env.BACK_ENDPOINT}/pay`,
+        `${process.env.REACT_APP_BACK_ENDPOINT}/pay`,
         { stripeToken, ...data },
         {
           headers: {

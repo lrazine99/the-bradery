@@ -1,19 +1,17 @@
 const db = require("../config/db");
 
 class Order {
-  constructor(customerId, orderDate, totalAmount) {
+  constructor(customerId, totalAmount) {
     this.customerId = customerId;
-    this.orderDate = orderDate;
     this.totalAmount = totalAmount;
   }
 
   save() {
     const query =
-      "INSERT INTO orders(customer_id, order_date, total_amount) VALUES(?,?,?);";
+      "INSERT INTO orders(customer_id, total_amount) VALUES(?,?);";
 
     return db.execute(query, [
       this.customerId,
-      this.orderDate,
       this.totalAmount,
     ]);
   }

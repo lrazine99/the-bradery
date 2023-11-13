@@ -1,18 +1,9 @@
 const mysql = require("mysql2");
 
-/*
-docker conf
-{
-host: "mysql_db",
-user: "MYSQL_USER",
-password: "MYSQL_PASSWORD",
-database: "bradery",
-} */
-
 const db = mysql.createPool({
-  host: "localhost",
+  host: "mysql_db",
   user: "root",
-  password: "",
+  password: "MYSQL_ROOT_PASSWORD",
   database: "bradery",
   multipleStatements: false,
 });

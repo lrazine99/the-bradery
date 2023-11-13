@@ -73,7 +73,7 @@ const LoginRegister = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.BACK_ENDPOINT}/user/login`,
+        `${process.env.REACT_APP_BACK_ENDPOINT}/user/login`,
         dataLogin
       );
 
@@ -162,7 +162,7 @@ const LoginRegister = () => {
       setIsSubmitting(true);
 
       const { data } = await axios.post(
-        `${process.env.BACK_ENDPOINT}/user/signup`,
+        `${process.env.REACT_APP_BACK_ENDPOINT}/user/signup`,
         dataRegister
       );
 

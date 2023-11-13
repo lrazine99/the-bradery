@@ -41,7 +41,7 @@ const App = () => {
       try {
         const {
           data: { message },
-        } = await axios.get(`${process.env.BACK_ENDPOINT}/products`);
+        } = await axios.get(`${process.env.REACT_APP_BACK_ENDPOINT}/products`);
 
         setProducts(
           message.map((product) => {
