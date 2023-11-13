@@ -11,12 +11,11 @@ const Product = ({ products }) => {
 
   const product = products.find((product) => product.id === Number(id));
 
- 
   return (
     <Fragment>
       <SEO
         titleTemplate="Produit"
-        description="Page Produit qui affiche un jeux en detail sur la plateforme GameCenter."
+        description="Page Produit qui affiche un produit en detail sur la plateforme TheBradery."
       />
 
       <Layout headerTop="visible">
@@ -24,13 +23,13 @@ const Product = ({ products }) => {
           pages={[{ label: "Shop", path: process.env.PUBLIC_URL + pathname }]}
         />
         {product ? (
-            <ProductImageDescription
-              spaceTopClass="pt-100"
-              spaceBottomClass="pb-100"
-              product={product}
-            />
+          <ProductImageDescription
+            spaceTopClass="pt-100"
+            spaceBottomClass="pb-100"
+            product={product}
+          />
         ) : (
-            <Navigate to="*" />
+          <Navigate to="*" />
         )}
       </Layout>
     </Fragment>

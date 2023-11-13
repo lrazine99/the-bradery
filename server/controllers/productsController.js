@@ -16,7 +16,7 @@ exports.getProductById = async (req, res, next) => {
 
   try {
     if (!isNaN(numericId) && numericId > 0) {
-      const [data, _] = await Product.getOneByCriteria(numericId);
+      const [data, _] = await Product.getOneById(numericId);
 
       res.status(200).json({ message: data });
     } else {

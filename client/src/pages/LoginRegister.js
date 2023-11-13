@@ -73,7 +73,7 @@ const LoginRegister = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACK_ENDPOINT}/user/login`,
+        `http://localhost:3001/user/login`,
         dataLogin
       );
 
@@ -160,8 +160,9 @@ const LoginRegister = () => {
 
     try {
       setIsSubmitting(true);
+
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACK_ENDPOINT}/user/signup`,
+        `http://localhost:3001/user/signup`,
         dataRegister
       );
 
@@ -185,7 +186,7 @@ const LoginRegister = () => {
     <Fragment>
       <SEO
         titleTemplate="LoginRegister"
-        description="Page de connexion et d'inscription de la plateforme GameCenter."
+        description="Page de connexion et d'inscription de la plateforme TheBradery."
       />
       <Layout headerTop="visible">
         <Breadcrumb

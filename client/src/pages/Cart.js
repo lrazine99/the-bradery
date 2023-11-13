@@ -18,16 +18,13 @@ const Cart = () => {
     }, {})
   );
 
-  const cartTotalPrice = cartWishlist["cart"].reduce(
-    (acc, product) => Number(acc) + Number(product.price * product.quantity),
-    0
-  );
+  const cartTotalPrice = totalCart(cart);
 
   return (
     <Fragment>
       <SEO
         titleTemplate="Panier"
-        description="Page panier de la plateforme GameCenter."
+        description="Page panier de la plateforme TheBradery."
       />
 
       <Layout headerTop="visible">
@@ -49,7 +46,7 @@ const Cart = () => {
                         <thead>
                           <tr>
                             <th>Image</th>
-                            <th>Nom du Jeux</th>
+                            <th>Nom du Produit</th>
                             <th>Prix</th>
                             <th>Quantité</th>
                             <th>Supprimer</th>
@@ -134,7 +131,7 @@ const Cart = () => {
                   <div className="col-lg-12">
                     <div className="cart-shiping-update-wrapper">
                       <div className="cart-shiping-update">
-                        <Link to={process.env.PUBLIC_URL + "/jeux"}>
+                        <Link to={process.env.PUBLIC_URL + "/produits"}>
                           Continuez vos Achats
                         </Link>
                       </div>
@@ -186,7 +183,7 @@ const Cart = () => {
                     </div>
                     <div className="item-empty-area__text">
                       Aucun Produits dans le Panier <br />
-                      <Link to={process.env.PUBLIC_URL + "/jeux"}>
+                      <Link to={process.env.PUBLIC_URL + "/"}>
                         Continuez vos Achats
                       </Link>
                     </div>

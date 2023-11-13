@@ -12,7 +12,7 @@ class Product {
    * @param {int} id
    * @returns {Promise}
    */
-  static getOneByCriteria(id) {
+  static getOneById(id) {
     const query = "SELECT * from products WHERE id = ?";
     return db.execute(query, [id]);
   }

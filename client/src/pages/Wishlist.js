@@ -20,7 +20,7 @@ const Wishlist = () => {
     <Fragment>
       <SEO
         titleTemplate="Wishlist"
-        description="Page Wishlist qui affiche un les jeux enregistrés par l'utilisateur sur la plateforme GameCenter."
+        description="Page Wishlist qui affiche un les produits enregistrés par l'utilisateur sur la plateforme TheBradery."
       />
       <Layout headerTop="visible">
         <Breadcrumb
@@ -33,7 +33,7 @@ const Wishlist = () => {
           <div className="container">
             {wishlist && wishlist.length ? (
               <Fragment>
-                <h3 className="cart-page-title">Vos jeux</h3>
+                <h3 className="cart-page-title">Vos produits</h3>
                 <div className="row">
                   <div className="col-12">
                     <div className="table-content table-responsive cart-table-content">
@@ -41,7 +41,7 @@ const Wishlist = () => {
                         <thead>
                           <tr>
                             <th>Image</th>
-                            <th>Nom du Jeux</th>
+                            <th>Nom du Produit</th>
                             <th>Prix</th>
                             <th>Ajouter Au Panier</th>
                             <th>Supprimer</th>
@@ -84,7 +84,7 @@ const Wishlist = () => {
                                   <Link
                                     to={
                                       process.env.PUBLIC_URL +
-                                      "/jeux/" +
+                                      "/produit/" +
                                       wishlistItem.id
                                     }
                                   >
@@ -155,7 +155,7 @@ const Wishlist = () => {
                   <div className="col-lg-12">
                     <div className="cart-shiping-update-wrapper">
                       <div className="cart-shiping-update">
-                        <Link to={process.env.PUBLIC_URL + "/jeux"}>
+                        <Link to={process.env.PUBLIC_URL + "/"}>
                           Continuez vos achats
                         </Link>
                       </div>
@@ -180,7 +180,7 @@ const Wishlist = () => {
                     <div className="item-empty-area__text">
                       Aucun Produits dans la liste de souhait <br />{" "}
                       <Link to={process.env.PUBLIC_URL + "/"}>
-                        Ajouter des Jeux
+                        Ajouter des Produits
                       </Link>
                     </div>
                   </div>

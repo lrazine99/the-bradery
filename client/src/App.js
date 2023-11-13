@@ -13,6 +13,7 @@ const Product = lazy(() => import("./pages/Product"));
 const Shop = lazy(() => import("./pages/Shop"));
 const Wishlist = lazy(() => import("./pages/Wishlist"));
 const LoginRegister = lazy(() => import("./pages/LoginRegister"));
+const Checkout = lazy(() => import("./pages/Checkout"));
 
 const App = () => {
   const [token, setToken] = useState(Cookies.get("token") || null);
@@ -90,6 +91,11 @@ const App = () => {
               <Route
                 path={process.env.PUBLIC_URL + "/wishlist"}
                 element={<Wishlist products={products} />}
+              />
+
+              <Route
+                path={process.env.PUBLIC_URL + "/commande"}
+                element={<Checkout products={products} />}
               />
 
               <Route
