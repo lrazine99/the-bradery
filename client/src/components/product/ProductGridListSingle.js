@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { findItem, addItem } from "../../helpers/cartWishlist";

@@ -9,7 +9,7 @@ const MobileNavMenu = () => {
     <nav className="offcanvas-navigation" id="offcanvas-navigation">
       <ul>
         <li>
-          <Link to={process.env.PUBLIC_URL + "/Shop"}>Shop</Link>
+          <Link to={process.env.PUBLIC_URL + "/"}>Shop</Link>
         </li>
         <li>
           <Link to={process.env.PUBLIC_URL + "/panier"}>Panier</Link>
@@ -21,10 +21,6 @@ const MobileNavMenu = () => {
           <Link to={process.env.PUBLIC_URL + "/wishlist"}>
             Liste de Souhait
           </Link>
-        </li>
-
-        <li>
-          <Link to={process.env.PUBLIC_URL + "/mon-compte"}>Mon Compte</Link>
         </li>
         <li>
           {token ? (

@@ -73,7 +73,7 @@ const LoginRegister = () => {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/user/login`,
+        `${process.env.BACK_ENDPOINT}/user/login`,
         dataLogin
       );
 
@@ -162,7 +162,7 @@ const LoginRegister = () => {
       setIsSubmitting(true);
 
       const { data } = await axios.post(
-        `http://localhost:3001/user/signup`,
+        `${process.env.BACK_ENDPOINT}/user/signup`,
         dataRegister
       );
 

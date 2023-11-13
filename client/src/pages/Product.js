@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import { useParams, useLocation, Navigate } from "react-router-dom";
 import SEO from "../components/seo";
 import Layout from "../layout/Layout";
@@ -34,6 +35,10 @@ const Product = ({ products }) => {
       </Layout>
     </Fragment>
   );
+};
+
+Product.propTypes = {
+  product: PropTypes.shape({}),
 };
 
 export default Product;

@@ -99,7 +99,7 @@ const Wishlist = () => {
                                 </td>
 
                                 <td className="product-wishlist-cart">
-                                  {!cartItem ? (
+                                  {!cartItem && wishlistItem.inventory > 0 ? (
                                     <button
                                       onClick={() =>
                                         addItem(
@@ -122,9 +122,13 @@ const Wishlist = () => {
                                         ? "Ajouté"
                                         : "Ajouter au panier"}
                                     </button>
-                                  ) : (
+                                  ) : wishlistItem.inventory > 0 ? (
                                     <button disabled className="active">
                                       Dans le Panier
+                                    </button>
+                                  ) : (
+                                    <button disabled className="active">
+                                      En rupture de stock
                                     </button>
                                   )}
                                 </td>

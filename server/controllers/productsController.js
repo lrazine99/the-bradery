@@ -1,6 +1,6 @@
 const Product = require("../models/Product");
 
-exports.getAllProducts = async (req, res, next) => {
+exports.getAllProducts = async (req, res) => {
   try {
     const [data, _] = await Product.getAll();
 
@@ -10,7 +10,7 @@ exports.getAllProducts = async (req, res, next) => {
   }
 };
 
-exports.getProductById = async (req, res, next) => {
+exports.getProductById = async (req, res) => {
   const { id } = req.params;
   const numericId = Number(id);
 

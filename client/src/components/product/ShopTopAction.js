@@ -12,7 +12,7 @@ const ShopTopAction = ({
     <div className="sidebar-widget">
       <div className="pro-sidebar-search ">
         <form
-          className="pro-sidebar-search-form"
+          className="pro-sidebar-search-form m-2"
           onSubmit={(e) => e.preventDefault()}
         >
           <input

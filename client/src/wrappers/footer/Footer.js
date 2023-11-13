@@ -29,43 +29,15 @@ const Footer = ({
         <div className="row">
           <div
             className={`${
-              sideMenu ? "col-xl-2 col-sm-4" : "col-lg-3 col-sm-4"
+              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-6 col-sm-6"
             }`}
           >
-            <FooterCopyright
-              footerLogo="/assets/img/logo/The Bradery.png"
-              spaceBottomClass="mb-30"
-            />
-          </div>
-          <div
-            className={`${
-              sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-4"
-            }`}
-          >
-            <div className="footer-widget mb-30 ml-30">
-              <div className="footer-title">
-                <h3>ABOUT US</h3>
-              </div>
-              <div className="footer-list">
-                <ul>
-                  <li>
-                    <Link to={process.env.PUBLIC_URL + "/qui-sommes-nous"}>
-                      A Propos
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={process.env.PUBLIC_URL + "/contact"}>
-                      Contact
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <FooterCopyright spaceBottomClass="mb-30" />
           </div>
 
           <div
             className={`${
-              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-3 col-sm-6"
+              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-6 col-sm-6"
             }`}
           >
             <div

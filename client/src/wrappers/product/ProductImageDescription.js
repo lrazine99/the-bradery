@@ -12,7 +12,7 @@ const ProductImageDescription = ({
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-6">
-            <div className="single-image">
+            <div className="single-image d-flex justify-content-center">
               <img
                 src={
                   process.env.PUBLIC_URL +

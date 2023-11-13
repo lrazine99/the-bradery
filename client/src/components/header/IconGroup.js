@@ -46,13 +46,7 @@ const IconGroup = ({ iconWhiteClass }) => {
                 </Link>
               )}
             </li>
-            {token && (
-              <li>
-                <Link to={process.env.PUBLIC_URL + "/mon-compte"}>
-                  Mon compte
-                </Link>
-              </li>
-            )}
+           
           </ul>
         </div>
       </div>

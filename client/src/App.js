@@ -5,7 +5,7 @@ import { cartWhislistContext } from "./hooks/cartWhislistContext";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import axios from "axios";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const Cart = lazy(() => import("./pages/Cart"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -38,19 +38,24 @@ const App = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const {
-        data: { message },
-      } = await axios.get("http://localhost:3001/products");
+      try {
+        const {
+          data: { message },
+        } = await axios.get(`${process.env.BACK_ENDPOINT}/products`);
 
-      setProducts(
-        message.map((product) => {
-          const copy = { ...product, price: Number(product.price) };
+        setProducts(
+          message.map((product) => {
+            const copy = { ...product, price: Number(product.price) };
 
-          return copy;
-        })
-      );
+            return copy;
+          })
+        );
+      } catch (error) {
+        toast("erreur lors du chargement", {
+          position: "bottom-left",
+        });
+      }
     };
-
     if (!products.length) {
       fetchProducts();
     }

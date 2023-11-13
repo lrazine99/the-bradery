@@ -33,13 +33,22 @@ class User {
     return db.execute(query, [username]);
   }
 
-   /**
+  /**
    * @param {string} email
    * @returns {Promise}
    */
-   static getOneByEmail(email) {
+  static getOneByEmail(email) {
     const query = "SELECT * from users WHERE email = ?";
     return db.execute(query, [email]);
+  }
+
+  /**
+   * @param {string} token
+   * @returns {Promise}
+   */
+  static getOneByToken(token) {
+    const query = "SELECT * from users WHERE token = ?";
+    return db.execute(query, [token]);
   }
 }
 

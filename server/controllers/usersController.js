@@ -3,7 +3,7 @@ const uid2 = require("uid2");
 const SHA256 = require("crypto-js/sha256");
 const base64 = require("crypto-js/enc-base64");
 
-exports.userSignup = async (req, res, next) => {
+exports.userSignup = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 

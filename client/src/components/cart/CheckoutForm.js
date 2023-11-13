@@ -2,14 +2,18 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { cartWhislistContext } from "../../hooks/cartWhislistContext";
+import { removeAll } from "../../helpers/cartWishlist";
 
 const CheckoutForm = ({ data }) => {
+  const { _, setCartWishlist } = useContext(cartWhislistContext);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const stripe = useStripe();
   const elements = useElements();
   const token = Cookies.get("token");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,14 +27,14 @@ const CheckoutForm = ({ data }) => {
 
     const cardElement = elements.getElement(CardElement);
     const stripeResponse = await stripe.createToken(cardElement, {
-      name: data.buyer,
+      name: data.buyerUsername,
     });
 
     const stripeToken = stripeResponse?.token?.id;
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BACK_ENDPOINT}/pay`,
+        `${process.env.BACK_ENDPOINT}/pay`,
         { stripeToken, ...data },
         {
           headers: {
@@ -45,7 +49,8 @@ const CheckoutForm = ({ data }) => {
         });
 
         setTimeout(() => {
-          window.location.reload(false);
+          removeAll("cart", setCartWishlist);
+          navigate("/");
         }, 2000);
       }
     } catch (error) {

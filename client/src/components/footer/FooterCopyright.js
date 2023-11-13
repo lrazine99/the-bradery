@@ -1,20 +1,11 @@
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Link } from "react-router-dom";
 
-const FooterCopyright = ({ footerLogo, spaceBottomClass, colorClass }) => {
+const FooterCopyright = ({ spaceBottomClass, colorClass }) => {
   return (
     <div className={clsx("copyright", spaceBottomClass, colorClass)}>
-      <div className="footer-logo">
-        <Link to={process.env.PUBLIC_URL + "/"}>
-          <img
-            alt="The Bradery logo"
-            src={process.env.PUBLIC_URL + footerLogo}
-          />
-        </Link>
-      </div>
       <p>
-        &copy; {new Date().getFullYear()}
+        The Bradery &copy; {new Date().getFullYear()}
         <br /> Tous les Droits sont Réservés
       </p>
     </div>
@@ -22,7 +13,6 @@ const FooterCopyright = ({ footerLogo, spaceBottomClass, colorClass }) => {
 };
 
 FooterCopyright.propTypes = {
-  footerLogo: PropTypes.string,
   spaceBottomClass: PropTypes.string,
   colorClass: PropTypes.string,
 };
